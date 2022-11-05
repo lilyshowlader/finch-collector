@@ -8,4 +8,8 @@ urlpatterns = [
   path('about/', views.about ,name='about'),
   # localhost:8000/finches
   path('finches/', views.finches_index, name='finches_index'),
+
+  # viewing a single finch details finch
+  # localhost:8000/finch/int:finch_id
+  path('finches/<int:finch_id>/',views.finches_detail, name='finches_detail'),
 ]
