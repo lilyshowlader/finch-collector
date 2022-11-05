@@ -12,4 +12,7 @@ urlpatterns = [
   # viewing a single finch details finch
   # localhost:8000/finch/int:finch_id
   path('finches/<int:finch_id>/',views.finches_detail, name='finches_detail'),
+
+  # to create a cat
+  path('finches/create/', views.FinchCreate.as_view(), name='finches_create'),
 ]
