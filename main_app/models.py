@@ -12,12 +12,31 @@ MEALS = (
 
 
 # Create your models here.
+
+# the Toy Model
+class Toy(models.Model):
+  name = models.CharField(max_length=50)
+  color = models.CharField(max_length=20)
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('toys_detail', kwargs={'pk': self.id})
+
+
+
+
 # the Finch Model
 class Finch(models.Model):
   name = models.CharField(max_length=100)
   breed = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
   age = models.IntegerField()
+    # Add the M:M relationship
+  toys = models.ManyToManyField(Toy)
+
+  
   def __str__(self):
     return self.name
   
@@ -51,13 +70,3 @@ class Feeding(models.Model):
     ordering = ['-date']
 
 
-# the Toy Model
-class Toy(models.Model):
-  name = models.CharField(max_length=50)
-  color = models.CharField(max_length=20)
-
-  def __str__(self):
-    return self.name
-
-  def get_absolute_url(self):
-    return reverse('toys_detail', kwargs={'pk': self.id})
