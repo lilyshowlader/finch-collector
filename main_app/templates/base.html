@@ -19,18 +19,13 @@
 </head>
 <body>
   <header>
-    <div class="header-logo-container">
-      <a href="/">
-        <img 
-        src="{% static 'images/header-logo.svg' %}"
-        alt="The Cat Collector Logo"
-      >
-      </a>
-    </div>
+      <h1>finch-collector</h1>
     <nav>
       <ul>
         <li><a href="{% url 'finches_index' %}">All Finches</a></li>
+        <li><a href="{% url 'toys_index' %}">All Toys</a></li>
         <li><a href="{% url 'finches_create' %}">Add a Finch</a></li>
+        <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
       </ul>
     </nav>
