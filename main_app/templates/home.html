@@ -9,12 +9,28 @@
 
 <section class="logo-container">
   <div class="finch-container">
-    <img src="{% static 'images/splash.svg' %}" alt="The Cat Collector Cat" />
+
   </div>
   <img 
-    src="{% static 'images/logotype.svg' %}" 
-    alt="Text reads: Cat Collector"
-  />
+      src="https://i.imgur.com/QSvg6Fv.png" 
+      width = 300px
+      height= 300px
+      alt="A beautiful finch"
+    >
 </section>
 
+</section>
+{% if not user.is_authenticated %}
+<section>
+  <form action="{% url 'home' %}" method="post" class="login">
+    <h1>Login</h1>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}">
+    <button type="submit" class="btn submit">Login</button>
+  </form>
+</section>
+{% endif %}
+
 {% endblock %}
+
