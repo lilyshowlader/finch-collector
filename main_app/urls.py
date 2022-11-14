@@ -29,7 +29,7 @@ urlpatterns = [
   # localhost:8000/toys/create
   path('toys/create/', views.ToyCreate.as_view(), name='toys_create'),
 
-  #
+  # toys
   path('toys/<int:pk>/', views.ToyDetail.as_view(), name='toys_detail'),
   path('toys/', views.ToyList.as_view(), name='toys_index'),
 
